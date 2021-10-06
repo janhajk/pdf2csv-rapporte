@@ -1,0 +1,21 @@
+
+
+Schema of a pdf text field
+
+
+
+ {
+   "x": 3.278, > from left to right in ??
+   "y": 10.797, > from bottom to top in ??
+   "w": 101.824, > ??
+   "sw": 0.36196875,
+   "clr": 0, > 0 = color-index of filling
+   "A": "left", > align = left, right, center
+   "R": [
+     {
+      "T": "xyz", > actual text
+      "S": -1, > style index from style dictionary; unused
+      "TS": [0, 12.9574, 0, 0 ] > [fontFaceId, fontSize, 1/0 for bold, 1/0 for italic]'
+    }
+  ]
+ }
