@@ -107,7 +107,8 @@ var flatten = function(arr) {
 
 
 const array2csv = function(data, delimiter = ';') {
-      let file = "sep=;\n";
+      // let file = "sep=;\n";
+      let file = "";
 
       // first format the numbers
       for (let i = 0; i < data.length; i++) {
