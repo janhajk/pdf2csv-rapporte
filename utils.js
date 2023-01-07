@@ -106,8 +106,8 @@ var flatten = function(arr) {
 
 
 
-let array2csv = function(data, delimiter = ';') {
-      var file = "";
+const array2csv = function(data, delimiter = ';') {
+      let file = "sep=;\n";
 
       // first format the numbers
       for (let i = 0; i < data.length; i++) {
@@ -131,7 +131,7 @@ let array2csv = function(data, delimiter = ';') {
 exports.array2csv = array2csv;
 
 
-let csvExport = function(res, allLines, filename) {
+const csvExport = function(res, allLines, filename) {
       let csv = array2csv(allLines);
       res.writeHead(200, {
             'Content-Type': 'text/csv; charset=utf-8',
