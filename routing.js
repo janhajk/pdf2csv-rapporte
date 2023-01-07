@@ -73,6 +73,7 @@ var basic = function(app, connection) {
                         utils.csvExport(res, arrLines, datum + '_Zusammenzug');
                     }
                     catch (e) {
+                        console.log(arrLines);
                         console.log(e);
                     }
 
