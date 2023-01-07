@@ -65,10 +65,17 @@ var basic = function(app, connection) {
             // regular parsing
             else {
                 if (files.length) {
-                    let arrLines = await gpg.pdf2csv(files, fields);
-                    let datum = arrLines[0].Datum;
-                    datum = '20' + datum.split('.').reverse().join('-').substr(0, 5);
-                    utils.csvExport(res, arrLines, datum + '_Zusammenzug');
+                    let arrLines;
+                    try {
+                        arrLines = await gpg.pdf2jsonPages(files, fields);
+                        let datum = arrLines[0].Datum;
+                        datum = '20' + datum.split('.').reverse().join('-').substr(0, 5);
+                        utils.csvExport(res, arrLines, datum + '_Zusammenzug');
+                    }
+                    catch (e) {
+                        console.log(e);
+                    }
+
                 }
                 else {
                     utils.log('No files sent!');
