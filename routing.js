@@ -75,6 +75,7 @@ var basic = function(app, connection) {
                     catch (e) {
                         console.log(arrLines);
                         console.log(e);
+                        res.send(e);
                     }
 
                 }
