@@ -68,7 +68,6 @@ var basic = function(app, connection) {
                     let arrLines;
                     try {
                         arrLines = await gpg.pdf2jsonPages(files, fields);
-                        console.log(arrLines);
                         let datum = arrLines[0].Datum;
                         datum = '20' + datum.split('.').reverse().join('-').substr(0, 5);
                         utils.csvExport(res, arrLines, datum + '_Zusammenzug');
